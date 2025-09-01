@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vocação Técnica</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* utilitário para acessibilidade do ícone */
+    /* truncar o parágrafo do card sem quebrar layout (3 linhas por padrão) */
+    .blog-card .excerpt{
+      display:-webkit-box;
+      -webkit-line-clamp: var(--lines, 3);
+      -webkit-box-orient: vertical;
+      overflow:hidden;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+<div class="container wrapper">
+  <!-- 🔽 SVG Background -->
+  <div class="svg-background">
+    <svg id="topoSVG"></svg>
+  </div>
+
+  <!-- 🔼 Header -->
+  <header class="transparent">
+    <nav class="navbar">
+      <!-- Logo Left -->
+      <a href="#inicio" class="logo">
+        <img id="siteLogo"
+             src="images/1.png"
+             data-light="images/1.png"
+             data-dark="images/2.png"
+             alt="Vocação Técnica Logo">
+      </a>
+
+      <!-- Botão hambúrguer (mobile) -->
+      <button class="nav-toggle mobile-only"
+              aria-label="Abrir menu"
+              aria-controls="nav-drawer"
+              aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <!-- Gaveta de navegação (mobile) -->
+        <aside id="nav-drawer"
+               class="nav-drawer"
+               role="dialog"
+               aria-modal="true"
+               aria-hidden="true"
+               aria-label="Menu">
+          <button class="nav-close" aria-label="Fechar menu">✕</button>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contactos">Contactos</a></li>
+            <li><a href="carreiras.html" aria-current="page">Carreiras</a></li>
+       
+          </ul>
+        </aside>
+
+
+      <!-- Menu desktop (mantido) -->
+      <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contactos">Contactos</a></li>
+ li>
+          <li><a href="#termos" id="open-terms-desktop">Termos de Uso</a></li>
+        </ul>
+      </nav>
+    </header>
+  <!-- 🔼 Main Content -->
+  <main id="inicio" class="container page-content fade-section">
+
+    <!-- Hero desktop (slider) -->
+    <div class="box-stack-wrapper desktop-only">
+      <div class="box box0">
+        <img src="images/slide3.png" class="slide" alt="Slide 1" />
+      </div>
+      <div class="box box1">
+        <img src="images/slide2.jpg" class="slide" alt="Slide 2" />
+      </div>
+      <div class="box box2">
+        <img src="images/slide4.png" class="slide" alt="Slide 3" />
+      </div>
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <!-- Hero mobile simples -->
+    <div class="hero-mobile mobile-only">
+      <img src="images/slide3.png" alt="Vocação Técnica" loading="lazy">
+    </div>
+
+    <div class="text-content">
+      <h2>CONHEÇA A VOCAÇÃO <span class="highlight">TÉCNICA.</span></h2>
+      <p>
+        Vocação Técnica, Lda é uma empresa jovem, moçambicana, dedicada a prestar serviços e dar assistência técnica profissional nas diversas áreas do saber técnico-científico.<br>
+        Para realizar esta missão, usa o máximo do potencial de sua equipa, composta por profissionais de alto padrão internacional.<br>
+        Em paralelo, busca sua missão por meio de promoção do enquadramento e integração de novos graduados no mercado de trabalho (nos distritos e municípios).
+      </p>
+      <a href="#sobre" class="saber-mais-btn">Saber mais</a>
+    </div>
+  </main>
+</div>
+
+  <!-- 🔽 Scrolling Gray Text Bar -->
+  <div class="scrolling-bar fade-section desktop-only">
+    <div class="scrolling-track">
+      <span>Há mais de 14 anos a construir soluções em Planeamento Territorial, Desenvolvimento Institucional, Arquitectura & Fiscalização.</span>
+      <span>Há mais de 14 anos a construir soluções em Planeamento, Arquitectura, Reassentamento e Capacitação Institucional.</span>
+    </div>
+  </div>
+
+  <!-- 🔽 Sobre -->
+  <section id="sobre" class="about-section fade-section">
+    <!-- Static About Text -->
+    <div class="about-text">
+      <h2>SOBRE A VOCAÇÃO TÉCNICA</h2>
+      <p>
+        Criada em 2010, a Vocação Técnica, Lda é uma empresa jovem com mais de 10 anos de experiência, dedicada à assistência técnica profissional nas mais diversas áreas do conhecimento científico.<br><br>
+        A nossa missão é fortalecer a governação local através da qualificação técnica e institucional nos Distritos e Municípios moçambicanos.
+      </p>
+    </div>
+
+    <section id="areas-atuacao" class="fade-section">
+      <div class="sobre-text-header">
+        <h2>ÁREAS DE ACTUAÇÃO</h2>
+
+        <!-- === ÁREAS DE ACTUAÇÃO (MOBILE) — sem imagens === -->
+        <div class="areas-mobile mobile">
+          <div class="area-card">
+            <h3>Planeamento e ordenamento territorial</h3>
+            <p>Planos territoriais integrados, uso sustentável do solo e orientação do crescimento urbano com participação comunitária.</p>
+          </div>
+
+          <div class="area-card">
+            <h3>Desenvolvimento Institucional</h3>
+            <p>Diagnósticos organizacionais, desenho de processos e implementação de metodologias modernas de gestão pública.</p>
+          </div>
+
+          <div class="area-card">
+            <h3>Arquitectura &amp; Fiscalização</h3>
+            <p>Projectos arquitectónicos inovadores e fiscalização de obras garantindo qualidade, sustentabilidade e conformidade técnica.</p>
+          </div>
+
+          <div class="area-card">
+            <h3>Cadastro &amp; SIG</h3>
+            <p>Levantamento cadastral, geoprocessamento e mapeamento para apoio à gestão do solo e das infraestruturas.</p>
+          </div>
+
+          <div class="area-card">
+            <h3>Reassentamento</h3>
+            <p>Planos de Reassentamento com salvaguardas sociais, restabelecimento de meios de vida e mediação comunitária.</p>
+          </div>
+
+          <div class="area-card">
+            <h3>Formação &amp; Capacitação</h3>
+            <p>Treinamentos técnicos a equipas municipais em gestão urbana, SIG e fiscalização.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sobre-slides-wrapper desktop-only">
+        <div class="sobre-slide">
+          <img src="images/img_2981.jpg" alt="Planeamento Urbano">
+          <div class="sobre-slide-text">
+            <h3>Planeamento e ordenamento Territorial</h3>
+            <p>Desenvolvemos planos territoriais integrados que promovem o uso sustentável do solo, conciliando as necessidades sociais, económicas e ambientais. Trabalhamos em estreita colaboração com governos locais e comunidades para orientar o crescimento ordenado e equilibrado dos distritos e municípios moçambicanos.</p>
+          </div>
+        </div>
+
+        <div class="sobre-slide">
+          <img src="images/img_0097.jpg" alt="Reassentamento Digno">
+          <div class="sobre-slide-text">
+            <h3>Desenvolvimento Institucional</h3>
+            <p>Reforçamos a capacidade técnica e administrativa de instituições públicas e privadas, através de diagnósticos organizacionais, desenho de processos e implementação de metodologias modernas de gestão, contribuindo para uma governação mais eficiente e participativa.</p>
+          </div>
+        </div>
+
+        <div class="sobre-slide">
+          <img src="images/TSPA.jpeg" alt="Infraestrutura Sustentável">
+          <div class="sobre-slide-text">
+            <h3>Arquitectura & Fiscalização</h3>
+            <p>Desenvolvemos projetos arquitectónicos inovadores e fiscalizamos a execução de obras para garantir qualidade, sustentabilidade e conformidade com normas técnicas, promovendo cidades mais funcionais e humanas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Range Slider Control (desktop) -->
+    <input type="range" class="sobre-range desktop-only" min="0" max="4" value="0" step="1" />
+
+    <!-- 🔽 Animated SVG Background for Sobre -->
+    <div class="svg-sobre-background desktop-only">
+      <svg id="sobreSVG" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"></svg>
+    </div>
+
+    <!-- === VISÃO, MISSÃO E VALORES === -->
+    <section id="visao-missao-valores" class="fade-section">
+      <div class="vmv-container">
+        <h2>Visão, Missão e Valores</h2>
+
+        <div class="vmv-grid">
+          <!-- Visão -->
+          <div class="vmv-card">
+            <h3>Visão</h3>
+            <p>
+              Ser referência em Moçambique e na região no <strong>planeamento territorial, urbanismo e desenvolvimento institucional</strong>,
+              promovendo cidades mais <strong>inclusivas, sustentáveis e participativas</strong>.
+            </p>
+          </div>
+
+          <!-- Missão -->
+          <div class="vmv-card">
+            <h3>Missão</h3>
+            <p>
+              Oferecer <strong>soluções inovadoras, participativas e sustentáveis</strong> em <strong>planeamento urbano e territorial</strong>,
+              <strong>arquitetura</strong> e <strong>desenvolvimento institucional</strong>, apoiando governos locais e centrais
+              na criação de políticas públicas e projetos que melhorem a qualidade de vida das comunidades.
+            </p>
+          </div>
+
+          <!-- Valores -->
+          <div class="vmv-card">
+            <h3>Valores</h3>
+            <ul>
+              <li><strong>Participação</strong> – envolver comunidades e atores locais em todas as fases do planeamento.</li>
+              <li><strong>Sustentabilidade</strong> – garantir equilíbrio entre desenvolvimento económico, social e ambiental.</li>
+              <li><strong>Inovação</strong> – aplicar metodologias modernas, digitais e criativas para soluções práticas.</li>
+              <li><strong>Transparência</strong> – atuar com ética, clareza e responsabilidade em todos os processos.</li>
+              <li><strong>Compromisso Social</strong> – contribuir para cidades mais humanas, inclusivas e resilientes.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- 🔽 Serviços -->
+  <section id="servicos" class="fade-section">
+    <h2>Serviços</h2>
+    <div class="servicos-grid">
+      <div class="servico">
+        <h3>Planeamento Territorial</h3>
+        <p>Elaboração de PDUT, PEU e instrumentos de ordenamento com metodologias participativas e sustentáveis.</p>
+      </div>
+      <div class="servico">
+        <h3>Arquitectura & Urbanismo</h3>
+        <p>Projetos arquitectónicos, requalificação urbana, desenho de espaços públicos e habitação.</p>
+      </div>
+      <div class="servico">
+        <h3>Reassentamento</h3>
+        <p>Planos de Reassentamento (PR) e acompanhamento social com enfoque em direitos e dignidade.</p>
+      </div>
+      <div class="servico">
+        <h3>Cadastro & SIG</h3>
+        <p>Levantamento cadastral, geoprocessamento e mapeamento de infraestruturas e usos do solo.</p>
+      </div>
+      <div class="servico">
+        <h3>Desenvolvimento Institucional</h3>
+        <p>Diagnósticos organizacionais, desenho de processos e apoio à gestão municipal e distrital.</p>
+      </div>
+      <div class="servico">
+        <h3>Formação & Capacitação</h3>
+        <p>Treinamentos técnicos para equipas municipais em gestão urbana, SIG e fiscalização.</p>
+      </div>
+      <div class="servico">
+        <h3>Estudos Ambientais</h3>
+        <p>Avaliações de impacto, medidas de mitigação e planos de gestão ambiental.</p>
+      </div>
+      <div class="servico">
+        <h3>Participação Comunitária</h3>
+        <p>Metodologias inclusivas para auscultação pública, audiências e mediação.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔽 Portfólio -->
+  <section id="portfolio" class="fade-section">
+    <h2>Portfólio</h2>
+
+    <!-- KPIs / Feitos -->
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-number" data-target="68">0</span>
+        <span class="stat-label">Projetos concluídos</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" data-target="12">0</span>
+        <span class="stat-label">Províncias atendidas</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" data-target="35">0</span>
+        <span class="stat-label">Municípios alcançados</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" data-target="18">0</span>
+        <span class="stat-label">Clientes institucionais</span>
+      </div>
+    </div>
+
+    <!-- Gráficos (desktop) -->
+    <div class="charts desktop-only">
+      <article class="chart-card">
+        <h3>Projetos por área</h3>
+        <svg class="bar-chart" viewBox="0 0 320 160" aria-label="Projetos por área"></svg>
+      </article>
+
+      <article class="chart-card">
+        <h3>Status dos projetos</h3>
+        <div class="donut-wrap">
+          <svg class="donut-chart" viewBox="0 0 120 120" aria-label="Status dos projetos"></svg>
+        </div>
+        <ul class="donut-legend">
+          <li><span class="swatch swatch-conc"></span> Concluídos</li>
+          <li><span class="swatch swatch-exec"></span> Em execução</li>
+          <li><span class="swatch swatch-prop"></span> Em proposta</li>
+        </ul>
+
+        <!-- Botão de download -->
+        <a href="docs/Portfolio-VT-Lda.pdf" download class="btn-download">📄 Baixar Company Profile</a>
+      </article>
+    </div>
+
+    <!-- Lista compacta (mobile) -->
+    <ul class="portfolio-mobile-list mobile-only"></ul>
+
+    <!-- Lista dinâmica de projetos -->
+    <div class="projetos-grid" id="projetosGrid"><!-- preenchido via JS --></div>
+  </section>
+<!-- 🔽 Blog / Projetos Recentes -->
+<section id="blog" class="fade-section">
+  <h2>Blog</h2>
+
+  <div class="blog-grid">
+    <!-- Card do Evento de 08 de Agosto (texto longo + clamp + modal) -->
+    <article class="blog-card"
+      data-title="Audiência Pública - PU Zumbo-sede"
+      data-date="08 de Agosto, 2025"
+      data-image="images/a3 04.uopg 02.jpg"
+      data-more="A 1ª Audiência Pública do Plano de Urbanização (PU) da Localidade de Zumbo-sede realizou-se em 08 de Agosto de 2025, em Ntowe, Bairro de Cahora Bassa (Província de Tete). A sessão marcou a apresentação do Relatório da Situação Actual e a recolha de contributos de munícipes, lideranças comunitárias e entidades públicas/privadas. Houve ênfase na necessidade de orientar a expansão urbana de forma estruturada, com prioridade ao acesso a serviços básicos, requalificação de áreas críticas e protecção de ecossistemas. As contribuições registadas serão incorporadas às próximas fases do PU (cenários de desenvolvimento e proposta urbanística), assegurando um processo participativo, transparente e alinhado aos objectivos de desenvolvimento local.">
+      <img src="images/evento-agosto.jpg" alt="Audiência Pública de Zumbo-sede" loading="lazy">
+      <div class="blog-content">
+        <h3>1ª Audiência Pública do PU de Zumbo-sede</h3>
+        <p class="excerpt" style="--lines:3;">
+          A 1ª Audiência Pública do Plano de Urbanização (PU) da Localidade de Zumbo-sede...
+        </p>
+        <span class="blog-date">08 de Agosto, 2025</span>
+      </div>
+    </article>
+
+    <article class="blog-card"
+      data-title="Reassentamento – Corredor Norte"
+      data-date="Junho 2025"
+      data-image="images/projeto2.jpg"
+      data-more="Plano de reassentamento digno com salvaguardas sociais, restabelecimento de meios de vida e mediação comunitária.">
+      <img src="images/projeto2.jpg" alt="Reassentamento – Corredor Norte" loading="lazy">
+      <div class="blog-content">
+        <h3>Reassentamento – Corredor Norte</h3>
+        <p class="excerpt">Plano de reassentamento digno, garantindo direitos e meios de vida às famílias deslocadas.</p>
+        <span class="blog-date">Junho 2025</span>
+      </div>
+    </article>
+
+    <article class="blog-card"
+      data-title="Cadastro & SIG – Marratane"
+      data-date="Maio 2025"
+      data-image="images/projeto3.jpg"
+      data-more="Levantamento cadastral e geoprocessamento para base cartográfica municipal e apoio à gestão do solo urbano.">
+      <img src="images/projeto3.jpg" alt="Cadastro & SIG – Marratane" loading="lazy">
+      <div class="blog-content">
+        <h3>Cadastro & SIG – Marratane</h3>
+        <p class="excerpt">Levantamento cadastral e geoprocessamento para melhor gestão do solo urbano.</p>
+        <span class="blog-date">Maio 2025</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+  <!-- 🔽 Contactos -->
+  <section id="contactos" class="fade-section">
+    <!-- Fundo SVG animado do Contactos (desktop) -->
+    <div class="svg-contactos-background desktop-only">
+      <svg id="contactosSVG" width="100%" height="100%"></svg>
+    </div>
+
+    <h2>Contactos</h2>
+    <div class="contacto-grid">
+      <div class="contacto">
+        <h3>Sedes</h3>
+        <p><strong>Nampula:</strong> Av. Eduardo Mondlane, nº 1234, 1º Andar Esq.</p>
+        <p><strong>Maputo:</strong> Av. da Malhangale, Rua da Manica, nº 1361, casa 188, 1º Andar Dir.</p>
+        <p><strong>Moçambique</strong></p>
+      </div>
+      <div class="contacto">
+        <h3>Contacto</h3>
+        <p>Tel: (+258) 843 128 808 / 843 128 807</p>
+        <p>Email: <a href="mailto:geral@vt.co.mz">geral@vt.co.mz</a></p>
+        <p>Web: <a href="https://www.vt.co.mz" target="_blank" rel="noopener">www.vt.co.mz</a></p>
+      </div>
+      <div class="contacto">
+        <h3>Localização</h3>
+        <p>Veja no mapa:</p>
+        <div class="mapa-embed">
+          <iframe
+            title="Mapa Vocação Técnica"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d..."
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            style="border:0;width:100%;height:220px;"></iframe>
+        </div>
+      </div>
+      <div class="contacto">
+        <h3>Envie-nos uma mensagem</h3>
+        <form id="form-contacto" novalidate>
+          <label for="nome">Nome*</label>
+          <input type="text" id="nome" name="nome" required>
+
+          <label for="email">Email*</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="assunto">Assunto*</label>
+          <input type="text" id="assunto" name="assunto" required>
+
+          <label for="mensagem">Mensagem*</label>
+          <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+          <!-- honeypot anti-spam -->
+          <input type="text" name="website" id="website" style="display:none" tabindex="-1" autocomplete="off">
+
+          <button type="submit" class="btn-enviar">Enviar</button>
+          <p id="form-status" class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+ <!-- === Modal (Blog / Projetos Recentes) === -->
+  <div id="projectModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-dialog" role="document">
+      <!-- Fechar -->
+      <button class="modal-close" aria-label="Fechar (Esc)">✕</button>
+
+      <div class="modal-media">
+        <img class="modal-img" src="" alt="">
+      </div>
+
+      <div class="modal-body">
+        <h3 class="modal-title"></h3>
+        <p class="modal-date"></p>
+        <div class="modal-text"></div>
+      </div>
+
+      <div class="modal-controls" role="toolbar" aria-label="Controlo de projetos">
+        <button class="mc-btn mc-prev" type="button">Anterior</button>
+
+        <div class="mc-middle">
+          <label for="mc-range" class="sr-only">Navegar projetos</label>
+          <input id="mc-range" class="mc-range" type="range" min="0" value="0" step="1">
+          <span class="mc-indicator"><span class="mc-current">1</span> de <span class="mc-total">3</span></span>
+        </div>
+
+        <button class="mc-btn mc-next" type="button">Próximo</button>
+        <button class="mc-btn mc-close" type="button" aria-label="Fechar">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔽 Footer -->
+  <footer id="footer">
+    <div class="footer-container">
+      <!-- Logo + Descrição -->
+      <div class="footer-col">
+        <img src="images/2.png" alt="Vocação Técnica Logo" class="footer-logo">
+        <p>Há mais de 14 anos a construir soluções em Planeamento Territorial, Desenvolvimento Institucional e Arquitectura.</p>
+      </div>
+
+      <!-- Links rápidos -->
+      <div class="footer-col">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#politicas" id="open-privacy-link-desktop">Política de Privacidade</a></l>
+        </ul>
+      </div>
+
+      <!-- Institucional -->
+      <div class="footer-col">
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="carreiras.html">Carreiras</a></li>
+          <li><a href="#politicas" id="open-privacy-footer">Política de Privacidade</a></li>
+          <li><a href="#termos" id="open-terms">Termos de Uso</a></li>
+        </ul>
+      </div>
+
+      <!-- Redes Sociais -->
+      <div class="footer-col">
+        <h4>Redes sociais</h4>
+        <ul class="social-links">
+          <li>
+            <a href="https://www.linkedin.com/company/vocacao-tecnica" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <!-- Ícone LinkedIn -->
+              <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true">
+                <path d="M22.225 0H1.771C.792 0 0 .771 0 1.723v20.555C0 23.229.792 24 1.771 24h20.454C23.2 24 24 23.229 24 22.278V1.723C24 .771 23.2 0 22.225 0zM7.052 20.452H3.861V9h3.191v11.452zM5.456 7.433a1.853 1.853 0 1 1 0-3.706 1.853 1.853 0 0 1 0 3.706zM20.447 20.452h-3.217v-5.569c0-1.328-.028-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.028V9h3.088v1.561h.044c.43-.813 1.482-1.67 3.051-1.67 3.264 0 3.868 2.148 3.868 4.942v6.619z"/>
+              </svg>
+              <span class="visually-hidden">LinkedIn</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Direitos -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 Vocação Técnica, Lda. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- 🔽 Overlay do menu (fica no fim do body) -->
+  <div class="nav-overlay" hidden></div>
+
+  <!-- 🔽 Scripts -->
+  <script src="script.js"></script>
+
+  <!-- 🔽 Clamp de texto dos cards (fallback real; não mexe no layout) -->
+  <script>
+    (function clampBlogExcerpts(){
+      const cards = document.querySelectorAll('#blog .blog-card .excerpt');
+      if (!cards.length) return;
+
+      const supportsLineClamp = CSS && CSS.supports && CSS.supports('-webkit-line-clamp','3');
+      if (supportsLineClamp) return; // CSS já resolve; nada a fazer
+
+      cards.forEach(p => {
+        const maxLines = parseInt(getComputedStyle(p).getPropertyValue('--lines')) || 3;
+        const lineHeight = parseFloat(getComputedStyle(p).lineHeight);
+        const maxHeight = lineHeight * maxLines;
+
+        const full = p.textContent.trim();
+        if (!full) return;
+
+        // se já couber, não corta
+        p.style.maxHeight = 'none';
+        p.textContent = full;
+        if (p.scrollHeight <= maxHeight + 1) return;
+
+        // busca binária para cortar sem quebrar layout
+        let lo = 0, hi = full.length, best = '';
+        while (lo <= hi) {
+          const mid = (lo + hi) >> 1;
+          p.textContent = full.slice(0, mid) + '…';
+          if (p.scrollHeight <= maxHeight + 1) {
+            best = p.textContent;
+            lo = mid + 1;
+          } else {
+            hi = mid - 1;
+          }
+        }
+        if (best) p.textContent = best;
+        p.dataset._clamped = '1';
+      });
+    })();
+  </script>
+</div>
+<!-- === Modal (Política de Privacidade) === -->
+<div id="privacy-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog privacy-dialog">
+    <button class="modal-close" id="close-privacy" aria-label="Fechar">✕</button>
+   <div class="modal-body privacy-text">
+  <h2>Política de Privacidade</h2>
+
+  <p>
+    A <strong>Vocação Técnica, Lda</strong> reconhece a importância da proteção dos dados pessoais dos seus clientes, 
+    colaboradores, parceiros e utilizadores do website. Por isso, adotamos medidas técnicas, administrativas e organizacionais 
+    destinadas a garantir a privacidade, a segurança e a confidencialidade das informações recolhidas. 
+    Esta Política de Privacidade descreve em detalhe os tipos de dados tratados, as finalidades do seu uso e os direitos 
+    que assistem ao titular das informações.
+  </p>
+
+  <h3>1. Dados Recolhidos</h3>
+  <p>
+    A recolha de dados pode ocorrer de forma direta, através de formulários, candidaturas, pedidos de contacto e inscrições 
+    em newsletters, ou de forma indireta, através de cookies e ferramentas de monitorização.  
+    Estes dados podem incluir, entre outros: nome completo, endereço de email, contacto telefónico, instituição a que pertence, 
+    cargo profissional, morada, bem como dados técnicos como endereço IP, geolocalização aproximada, tipo de dispositivo, 
+    navegador utilizado e registos de interação com o website.
+  </p>
+
+  <h3>2. Finalidade da Recolha</h3>
+  <p>
+    Os dados recolhidos destinam-se a permitir uma comunicação eficaz entre a <strong>Vocação Técnica, Lda</strong> e o utilizador, 
+    nomeadamente para: responder a pedidos de informação, elaborar propostas comerciais, processar candidaturas de emprego, 
+    enviar conteúdos institucionais e publicitários quando autorizado, melhorar a qualidade do website e dos serviços prestados, 
+    bem como cumprir obrigações legais e regulamentares aplicáveis.  
+    Também poderemos utilizar os dados para análises estatísticas internas, sempre com salvaguarda da identidade do utilizador.
+  </p>
+
+  <h3>3. Partilha de Dados</h3>
+  <p>
+    A <strong>Vocação Técnica, Lda</strong> não comercializa dados pessoais.  
+    A partilha só ocorre em situações específicas, como:  
+    (i) cumprimento de requisitos legais e ordens de autoridades competentes;  
+    (ii) contratação de serviços externos de apoio técnico ou de armazenamento, sempre sob cláusulas contratuais de confidencialidade;  
+    (iii) parcerias institucionais em projetos, quando indispensável para a execução contratual.  
+    Em todas as situações, garantimos que os terceiros cumprem com padrões de proteção equivalentes aos que adotamos.
+  </p>
+
+  <h3>4. Segurança</h3>
+  <p>
+    Adotamos medidas de segurança técnicas (como encriptação, firewalls e monitorização de acessos) e organizacionais 
+    (como restrição de acessos, auditorias e protocolos internos) para proteger os dados contra perda, roubo, alteração, 
+    utilização indevida ou acesso não autorizado. Apesar destes esforços, lembramos que nenhum sistema digital é 
+    totalmente imune a riscos, pelo que incentivamos os utilizadores a adotar boas práticas de segurança no seu próprio dispositivo.
+  </p>
+
+  <h3>5. Cookies e Tecnologias Semelhantes</h3>
+  <p>
+    Utilizamos cookies e ferramentas analíticas para melhorar a experiência de navegação, personalizar conteúdos, 
+    recordar preferências e obter dados estatísticos sobre o uso do website.  
+    O utilizador pode gerir ou desativar cookies diretamente nas definições do seu navegador, embora isso possa limitar 
+    determinadas funcionalidades.
+  </p>
+
+  <h3>6. Direitos do Titular</h3>
+  <p>
+    O titular dos dados tem direito a solicitar, a qualquer momento:  
+    - Acesso aos seus dados pessoais;  
+    - Retificação ou atualização de informações inexatas;  
+    - Eliminação dos dados, quando aplicável;  
+    - Limitação ou oposição ao tratamento;  
+    - Portabilidade dos dados para outro responsável, quando tecnicamente viável.  
+    O exercício destes direitos poderá ser solicitado através do email <a href="mailto:geral@vt.co.mz">geral@vt.co.mz</a>.  
+    A <strong>Vocação Técnica, Lda</strong> compromete-se a responder a todos os pedidos num prazo razoável, 
+    respeitando os prazos legais aplicáveis.
+  </p>
+
+  <h3>7. Conservação dos Dados</h3>
+  <p>
+    Os dados são conservados apenas pelo período estritamente necessário para cumprir as finalidades para as quais foram recolhidos, 
+    salvo quando a lei exigir períodos mais longos de conservação. Após o fim desse prazo, os dados são eliminados de forma segura 
+    ou anonimizados para utilização em análises estatísticas.
+  </p>
+
+  <h3>8. Alterações à Política</h3>
+  <p>
+    Esta Política de Privacidade poderá ser revista sempre que necessário, para refletir mudanças legislativas, evoluções 
+    tecnológicas ou melhorias institucionais. As atualizações serão publicadas no website com indicação da data da última revisão. 
+    Recomendamos a consulta periódica desta página para estar informado sobre como protegemos os seus dados.
+  </p>
+
+  <h3>9. Contactos</h3>
+  <p>
+    Caso tenha dúvidas, comentários ou pretenda exercer os seus direitos, pode entrar em contacto connosco:  
+    <strong>Email:</strong> <a href="mailto:geral@vt.co.mz">geral@vt.co.mz</a>  
+    <strong>Telefone:</strong> (+258) 843 128 808  
+    <strong>Sede:</strong> Av. Eduardo Mondlane, nº 1234, Nampula, Moçambique.
+  </p>
+</div>
+</div>
+<!-- === Modal (Termos de Uso) === -->
+<div id="terms-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog terms-dialog">
+    <button class="modal-close" id="close-terms" aria-label="Fechar">✕</button>
+    <div class="modal-body terms-text">
+      <h2>Termos de Uso</h2>
+      <p>Bem-vindo ao site da <strong>Vocação Técnica, Lda</strong>. Estes Termos de Uso regulam o acesso e utilização deste website. Ao navegar, o utilizador concorda com as condições aqui descritas.</p>
+
+      <h3>1. Utilização do Website</h3>
+      <p>O conteúdo disponibilizado tem caráter informativo e institucional. É proibida a utilização do website para fins ilícitos ou que possam prejudicar a imagem da empresa.</p>
+
+      <h3>2. Direitos de Propriedade</h3>
+      <p>Todos os textos, imagens, logótipos e demais conteúdos são propriedade da <strong>Vocação Técnica, Lda</strong>, não podendo ser reproduzidos sem autorização prévia.</p>
+
+      <h3>3. Limitação de Responsabilidade</h3>
+      <p>A empresa não se responsabiliza por eventuais danos resultantes do uso inadequado do website ou da indisponibilidade temporária do serviço.</p>
+
+      <h3>4. Alterações</h3>
+      <p>Reservamo-nos o direito de alterar ou atualizar estes Termos de Uso a qualquer momento, sendo as mudanças publicadas nesta página.</p>
+
+      <h3>5. Contactos</h3>
+      <p>Para dúvidas ou informações adicionais, contacte-nos através do email <a href="mailto:geral@vt.co.mz">geral@vt.co.mz</a> ou pelo telefone (+258) 843 128 808.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Overlay único -->
+<div class="nav-overlay" hidden></div>
+
+<!-- Scripts -->
+<script src="script.js"></script>
+<script>
+  // === Modal Política de Privacidade ===
+  (function privacyModalSetup(){
+    const modal = document.getElementById("privacy-modal");
+    const closeBtn = document.getElementById("close-privacy");
+    const openers = document.querySelectorAll("#open-privacy-link, #open-privacy-link-desktop, #open-privacy-footer");
+
+    if (!modal) return;
+
+    function openModal(e){
+      e.preventDefault();
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden","false");
+      document.body.classList.add("no-scroll");
+    }
+    function closeModal(){
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden","true");
+      document.body.classList.remove("no-scroll");
+    }
+
+    openers.forEach(link => link.addEventListener("click", openModal));
+    closeBtn?.addEventListener("click", closeModal);
+    modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape" && modal.classList.contains("open")) closeModal(); });
+  })();
+
+<!-- Scripts -->
+<script src="script.js"></script>
+<script>
+  // === Modal Política de Privacidade ===
+  (function privacyModalSetup(){
+    const modal = document.getElementById("privacy-modal");
+    const closeBtn = document.getElementById("close-privacy");
+    const openers = document.querySelectorAll("#open-privacy-link, #open-privacy-link-desktop, #open-privacy-footer");
+
+    if (!modal) return;
+
+    function openModal(e){
+      e.preventDefault();
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden","false");
+      document.body.classList.add("no-scroll");
+    }
+    function closeModal(){
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden","true");
+      document.body.classList.remove("no-scroll");
+    }
+
+    openers.forEach(link => link.addEventListener("click", openModal));
+    closeBtn?.addEventListener("click", closeModal);
+    modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape" && modal.classList.contains("open")) closeModal(); });
+  })();
+
+  // === Modal Termos de Uso ===
+  (function termsModalSetup(){
+    const modal = document.getElementById("terms-modal");
+    const closeBtn = document.getElementById("close-terms");
+    const openers = document.querySelectorAll("#open-terms, #open-terms-desktop");
+
+    if (!modal) return;
+
+    function openModal(e){
+      e.preventDefault();
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden","false");
+      document.body.classList.add("no-scroll");
+    }
+    function closeModal(){
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden","true");
+      document.body.classList.remove("no-scroll");
+    }
+
+    openers.forEach(link => link.addEventListener("click", openModal));
+    closeBtn?.addEventListener("click", closeModal);
+    modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape" && modal.classList.contains("open")) closeModal(); });
+  })();
+</script>
+
+</body>
+</html>
+</html>

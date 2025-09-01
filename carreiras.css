@@ -1,0 +1,352 @@
+/* =========================================
+   carreiras.css — Careers page (scoped)
+   Works only with <body class="careers-page">
+   ========================================= */
+
+/* 1. TOKENS & VARIABLES */
+body.careers-page {
+  --brand: #e74400;
+  --brand-600: #c33a00;
+  --ink-900: #111;
+  --paper: #fff;
+
+  /* Glass defaults */
+  --fg: #fff;
+  --fg-dim: #d9d9d9;
+  --line: #ffffff2e;
+  --line-strong: #ffffff8c;
+  --surface: rgba(24,24,24,.74);
+  --ring: rgba(231,68,0,.35);
+
+  /* Layout spacing */
+  --section-padding: 80px;
+  --section-gap: 40px;
+  --card-gap: 30px;
+}
+
+
+
+/* 2. PAGE CONTAINER & BACKGROUND */
+body.careers-page .car-main {
+  width: min(960px, 100%);
+  margin: var(--section-padding) auto;
+  padding-inline: clamp(16px, 4vw, 24px);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+body.careers-page .car-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events:none;
+  z-index:-1;
+  opacity:.26;
+}
+
+/* 3. HERO SECTION */
+body.careers-page .car-hero {
+  padding-top: calc(var(--section-padding) + 90px);
+  margin-bottom: var(--section-gap);
+}
+body.careers-page .car-hero-content {
+  max-width: 760px;
+  margin-inline: auto;
+  text-align: center;
+}
+body.careers-page .car-hero-content h2 {
+  font-size: var(--fs-xl);
+  font-weight: 1200;
+  color: var(--brand);
+  line-height: 1.2;
+}
+body.careers-page .car-highlight { color: var(--brand); }
+
+/* 4. VAGAS (JOBS) CARDS */
+body.careers-page #car-vagas { margin-top: var(--section-padding); }
+body.careers-page .car-section-head {
+  margin-bottom: var(--section-gap);
+  text-align: center;
+}
+body.careers-page .car-vagas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--card-gap);
+  max-width: 1000px;
+  margin-inline: auto;
+}
+body.careers-page .car-vaga-card {
+  padding: 30px;
+  border-radius: 50px;
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)), rgba(24,24,24,.62);
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 20px 50px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.08);
+  color: #f3f3f3;
+  text-align:left;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+body.careers-page .car-vaga-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 26px 60px rgba(0,0,0,.3);
+}
+
+body.careers-page .car-vaga-card h3 {
+  color:#fff;
+  font-weight:900;
+  margin-bottom:12px;
+}
+body.careers-page .car-vaga-card p { color:#e9e9e9; }
+
+/* 5. CAREERS FORM */
+body.careers-page #car-form-head {
+  margin-top: var(--section-padding);
+  margin-bottom: var(--section-gap);
+  text-align: center;
+}
+body.careers-page .car-form-title {
+  font-weight:900;
+  font-size:1.9rem;
+  color:#fff;
+  margin-bottom:20px;
+}
+body.careers-page .car-form-sub {
+  color:#ddd;
+  font-size:1rem;
+  margin-bottom:24px;
+}
+body.careers-page .car-form-card {
+  border-radius: 50px;
+  padding: clamp(28px, 3vw, 40px);
+  margin: 0 auto var(--section-padding);
+  background: rgba(20,20,20,.55);
+  color: #fff;
+  backdrop-filter: blur(20px) saturate(120%) brightness(105%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%) brightness(105%);
+  box-shadow: 0 20px 46px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.1);
+}
+
+/* Grid */
+body.careers-page .car-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--card-gap);
+}
+body.careers-page .car-span-2 { grid-column: 1 / -1; }
+
+/* Input with icons */
+body.careers-page .car-input-icon {
+  position: relative;
+  display:flex;
+  align-items:center;
+}
+body.careers-page .car-input-icon i {
+  position:absolute;
+  left:14px;
+  color:#aaa;
+  font-size:.95rem;
+}
+body.careers-page .car-input-icon input,
+body.careers-page .car-input-icon textarea {
+  width:100%;
+  padding:14px 14px 14px 40px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.25);
+  background: rgba(255,255,255,.06);
+  color:#fff;
+  font-size:1rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: border-color .2s ease, background .2s ease;
+}
+body.careers-page .car-input-icon textarea {
+  min-height:140px;
+  resize:vertical;
+}
+body.careers-page .car-input-icon input::placeholder,
+body.careers-page .car-input-icon textarea::placeholder {
+  color: rgba(255,255,255,.55);
+}
+body.careers-page .car-input-icon input:focus,
+body.careers-page .car-input-icon textarea:focus {
+  outline:none;
+  border-color: var(--brand);
+  background: rgba(255,255,255,.12);
+}
+
+/* Dropzones */
+body.careers-page .car-dropzone {
+  border: 2px dashed rgba(255,255,255,.3);
+  border-radius:16px;
+  padding:24px;
+  text-align:center;
+  background: rgba(255,255,255,.05);
+  transition: border-color .2s ease, background .2s ease;
+}
+body.careers-page .car-dropzone:hover {
+  border-color: var(--brand);
+  background: rgba(255,255,255,.08);
+}
+body.careers-page .car-dz-icon { font-size:2rem; color:#fff; margin-bottom:10px; display:block; }
+body.careers-page .car-dz-invite { color:#fff; }
+body.careers-page .car-dz-hint { color:#ddd; font-size:.85rem; }
+body.careers-page .car-dz-browse {
+  color: var(--brand);
+  text-decoration: underline;
+  cursor: pointer;
+  background:none;
+  border:none;
+}
+
+/* File list */
+body.careers-page .car-file-list {
+  margin:10px 0 0;
+  padding:0;
+  list-style:none;
+  color:#eee;
+  font-size:.9rem;
+}
+
+/* Actions */
+body.careers-page .car-actions {
+  text-align:center;
+  margin-top: var(--section-gap);
+}
+body.careers-page .car-btn {
+  padding:14px 28px;
+  border-radius:999px;
+  background: linear-gradient(180deg, var(--brand), var(--brand-600));
+  border:none;
+  color:#fff;
+  font-weight:700;
+  box-shadow: 0 8px 20px rgba(231,68,0,.25);
+  cursor:pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+body.careers-page .car-btn:hover {
+  transform:translateY(-2px);
+  box-shadow:0 10px 26px rgba(231,68,0,.3);
+}
+body.careers-page .car-form-status {
+  display:block;
+  margin-top:10px;
+  font-size:.9rem;
+  color:#ccc;
+}
+
+/* Mobile */
+@media(max-width:680px){
+  body.careers-page .car-grid { grid-template-columns:1fr; gap:20px; }
+  body.careers-page .car-form-card { padding:20px; border-radius:20px; }
+}
+
+/* 6. UTILITIES */
+body.careers-page .car-fade {
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity .8s ease-out, transform .8s ease-out;
+}
+body.careers-page .car-fade.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+body.careers-page .car-visually-hidden {
+  position:absolute;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+}
+
+/* === TITLES OVERRIDE (Careers page) === */
+
+/* Hero main title */
+body.careers-page .car-hero-content h2 {
+  font-size: var(--fs-xl);
+  font-weight: 900;
+  color: var(--brand);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* Section headers (like "Vagas") */
+body.careers-page .car-section-head h2,
+body.careers-page .car-section-head h3 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--brand);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* Force Careers subtitle to be dark text */
+body.careers-page .car-form-sub {
+  color: #333 !important;
+  font-weight: 500;
+}
+
+/* Form titles */
+body.careers-page .car-form-title {
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--brand);
+  margin-bottom: 20px;
+}
+
+/* Careers Intro Section */
+body.careers-page .car-intro {
+  margin: 60px auto;
+  padding: 100px 20px;
+  max-width: 700px;
+  text-align: center;
+}
+body.careers-page .car-intro h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--brand);
+  margin-bottom: 20px;
+}
+body.careers-page .car-intro p {
+  font-size: 1.05rem;
+  color: #222;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Careers Page Topo Background (desktop only) */
+body.careers-page .carreiras-topo {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.25;
+  background: radial-gradient(1200px 380px at 50% 20%, rgba(255,255,255,.06), rgba(0,0,0,0));
+}
+
+body.careers-page #carreirasTopo {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Contour line styles */
+#carreirasTopo path {
+  fill: none;
+  stroke: rgba(255,255,255,.28);
+  vector-effect: non-scaling-stroke;
+  stroke-width: 1.25;
+  transition: opacity .35s ease;
+}
+
+#carreirasTopo path.level-0 { stroke: rgba(231,68,0,.35); }
+#carreirasTopo path.level-1 { stroke: rgba(231,68,0,.25); }
+
+/* Motion-safe */
+@media (prefers-reduced-motion: reduce){
+  #carreirasTopo path { transition: none; }
+}
+
+/* Show only on desktop */
+@media (max-width: 768px) {
+  .carreiras-topo {
+    display: none !important;
+  }
+}

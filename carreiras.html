@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carreiras – Vocação Técnica</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="carreiras.css" />
+</head>
+<body class="page-col careers-page">
+
+  <!-- 🔽 Global SVG Background -->
+<!-- Topography background -->
+<div class="svg-background desktop-only" aria-hidden="true">
+  <svg id="topoSVG" preserveAspectRatio="xMidYMid slice"></svg>
+</div>
+
+  <!-- 🔼 Header -->
+  <header class="transparent">
+    <nav class="navbar">
+      <!-- Logo -->
+      <a href="index.html#inicio" class="logo">
+        <img src="images/1.png" alt="Vocação Técnica Logo">
+      </a>
+
+      <!-- Hamburger -->
+      <button class="nav-toggle mobile-only"
+              aria-label="Abrir menu"
+              aria-controls="nav-drawer"
+              aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <!-- Drawer -->
+      <aside id="nav-drawer" class="nav-drawer" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Menu">
+        <button class="nav-close" aria-label="Fechar menu">✕</button>
+        <ul>
+          <li><a href="index.html#inicio">Início</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#servicos">Serviços</a></li>
+          <li><a href="index.html#portfolio">Portfólio</a></li>
+          <li><a href="index.html#blog">Blog</a></li>
+          <li><a href="index.html#contactos">Contactos</a></li>
+          <li><a href="carreiras.html" class="active" aria-current="page">Carreiras</a></li>
+        </ul>
+      </aside>
+
+      <!-- Desktop menu -->
+      <ul>
+        <li><a href="index.html#inicio">Início</a></li>
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#servicos">Serviços</a></li>
+        <li><a href="index.html#portfolio">Portfólio</a></li>
+        <li><a href="index.html#blog">Blog</a></li>
+        <li><a href="index.html#contactos">Contactos</a></li>
+        <li><a href="carreiras.html" class="active" aria-current="page">Carreiras</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 🔽 Careers Page Content -->
+  <main class="car-main">
+
+    <!-- Hero -->
+    <section class="car-hero">
+      <div class="car-hero-content">
+        <h2>Junte-se à <span class="car-highlight">Vocação Técnica</span></h2>
+        <p>Construa o futuro do planeamento territorial, arquitectura e desenvolvimento institucional connosco.</p>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="car-intro car-fade">
+      <h2>Carreiras na VT</h2>
+      <p>Na Vocação Técnica, valorizamos profissionais dedicados e apaixonados por transformar cidades e comunidades. Oferecemos oportunidades em diversas áreas, promovendo inovação, participação e sustentabilidade.</p>
+    </section>
+
+    <!-- Vagas -->
+    <section id="car-vagas" class="car-fade">
+      <div class="car-section-head">
+        <h2>Vagas em Aberto</h2>
+      </div>
+      <div class="car-vagas-grid">
+        <div class="car-vaga-card">
+          <h3>Urbanista Júnior</h3>
+          <p>Apoiar a elaboração de planos de urbanização e ordenamento territorial.</p>
+        </div>
+        <div class="car-vaga-card">
+          <h3>Engenheiro Civil</h3>
+          <p>Fiscalização de obras e elaboração de projectos técnicos.</p>
+        </div>
+      </div>
+    </section>
+
+     <!-- Formulário -->
+    <section id="car-form">
+      <div id="car-form-head">
+        <h2 class="car-form-title">Candidate-se</h2>
+        <p class="car-form-sub">Envie o seu CV, certificados e carta de motivação através do formulário abaixo.</p>
+      </div>
+      <form class="car-form-card" id="carreirasForm">
+        <div class="car-grid">
+          <!-- Nome -->
+          <div class="car-input-icon">
+            <i class="fa fa-user"></i>
+            <input type="text" name="nome" placeholder="Nome completo" required>
+          </div>
+          <!-- Email -->
+          <div class="car-input-icon">
+            <i class="fa fa-envelope"></i>
+            <input type="email" name="email" placeholder="Email" required>
+          </div>
+          <!-- Telefone -->
+          <div class="car-input-icon">
+            <i class="fa fa-phone"></i>
+            <input type="tel" name="telefone" placeholder="Telefone" required>
+          </div>
+          <!-- CV Upload -->
+          <div class="car-span-2 car-dropzone">
+            <i class="fa fa-file car-dz-icon"></i>
+            <p class="car-dz-invite">Arraste e solte o seu CV aqui</p>
+            <p class="car-dz-hint">Formatos aceites: PDF, DOCX</p>
+            <button type="button" class="car-dz-browse">Selecionar ficheiro</button>
+            <ul class="car-file-list" id="cv-list"></ul>
+          </div>
+          <!-- Certificados Upload -->
+          <div class="car-span-2 car-dropzone">
+            <i class="fa fa-certificate car-dz-icon"></i>
+            <p class="car-dz-invite">Adicione os seus certificados</p>
+            <p class="car-dz-hint">Formatos aceites: PDF, JPG, PNG</p>
+            <button type="button" class="car-dz-browse">Selecionar ficheiros</button>
+            <ul class="car-file-list" id="cert-list"></ul>
+          </div>
+          <!-- Carta de motivação -->
+          <div class="car-span-2 car-input-icon">
+            <i class="fa fa-comment"></i>
+            <textarea name="mensagem" placeholder="Carta de motivação"></textarea>
+          </div>
+        </div>
+        <div class="car-actions">
+          <button type="submit" class="car-btn">Enviar Candidatura</button>
+          <span class="car-form-status" id="form-status"></span>
+        </div>
+      </form>
+    </section>
+  </main>
+  <!-- 🔽 Footer -->
+  <footer id="footer">
+    <div class="footer-container">
+      <!-- Logo + Descrição -->
+      <div class="footer-col">
+        <img src="images/2.png" alt="Vocação Técnica Logo" class="footer-logo">
+        <p>Há mais de 14 anos a construir soluções em Planeamento Territorial, Desenvolvimento Institucional e Arquitectura.</p>
+      </div>
+
+      <!-- Links rápidos -->
+      <div class="footer-col">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contactos">Contactos</a></li>
+        </ul>
+      </div>
+
+      <!-- Institucional -->
+      <div class="footer-col">
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="carreiras.html">Carreiras</a></li>
+          <li><a href="#Politica_de_Privacidade_VT.html">Política de Privacidade</a></li>
+          <li><a href="#">Termos de Uso</a></li>
+        </ul>
+      </div>
+
+      <!-- Redes Sociais -->
+      <div class="footer-col">
+        <h4>Redes sociais</h4>
+        <ul class="social-links">
+          <li>
+            <a href="https://www.linkedin.com/company/vocacao-tecnica" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <!-- Ícone LinkedIn -->
+              <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true">
+                <path d="M22.225 0H1.771C.792 0 0 .771 0 1.723v20.555C0 23.229.792 24 1.771 24h20.454C23.2 24 24 23.229 24 22.278V1.723C24 .771 23.2 0 22.225 0zM7.052 20.452H3.861V9h3.191v11.452zM5.456 7.433a1.853 1.853 0 1 1 0-3.706 1.853 1.853 0 0 1 0 3.706zM20.447 20.452h-3.217v-5.569c0-1.328-.028-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.028V9h3.088v1.561h.044c.43-.813 1.482-1.67 3.051-1.67 3.264 0 3.868 2.148 3.868 4.942v6.619z"/>
+              </svg>
+              <span class="visually-hidden">LinkedIn</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Direitos -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 Vocação Técnica, Lda. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <div class="nav-overlay" hidden></div>
+  <script src="script.js"></script>
+</body>
+</html>
+<script src="script.js"></script>

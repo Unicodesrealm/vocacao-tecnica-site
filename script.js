@@ -809,13 +809,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // 🔽 Atualizado: imagem só aparece no modal se não for mobile
   function loadModalContent(card, index) {
     const img   = card.querySelector("img");
     const title = card.dataset.title || card.querySelector("h3")?.textContent || "";
     const date  = card.dataset.date  || "";
     const more  = card.dataset.more  || card.querySelector("p")?.textContent || "";
 
-    if (modalImg && img) modalImg.src = img.src || img.getAttribute("data-src");
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (!isMobile && modalImg && img) {
+      modalImg.src = img.src || img.getAttribute("data-src");
+      modalImg.alt = title;
+      modalImg.style.display = "block";
+    } else if (modalImg) {
+      modalImg.style.display = "none";
+    }
+
     if (modalTitle) modalTitle.textContent = title;
     if (modalDate)  modalDate.textContent  = date;
     if (modalText)  modalText.textContent  = more;
@@ -895,6 +905,8 @@ document.addEventListener("DOMContentLoaded", () => {
   modalRange?.addEventListener("input", e => {
     showAt(parseInt(e.target.value, 10));
   });
+})();
+
 
   /* ===========================
    *  MODAL: POLÍTICA DE PRIVACIDADE
@@ -926,8 +938,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("keydown", e => {
       if (e.key === "Escape" && privacyModal.classList.contains("open")) closeModal();
     });
-  })();
+  })(); // fecha privacyModalSetup
 
-
-})();
-}); // DOMContentLoaded CLOSES ONCE
+}); // fecha DOMContentLoaded

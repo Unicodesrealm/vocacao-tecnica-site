@@ -1039,8 +1039,8 @@ body.page-col #footer .footer-container{
     .area-card)::before{
   content:"";
   position:absolute; inset:0; z-index:-1;
-  backdrop-filter: blur(16px) saturate(125%) brightness (10%);
-  -webkit-backdrop-filter: blur(16px) saturate(125%) brightness(70%);
+  backdrop-filter: blur(16px) saturate(50%) brightness (100%);
+  -webkit-backdrop-filter: blur(16px) saturate(50%) brightness(50%);
 }
 
 /* soft top highlight sweep (like the form) */
@@ -1109,9 +1109,9 @@ body.page-col #footer .footer-container{
     .chart-card,
     #portfolio .stat,
     .area-card):hover{
-  transform: translateY(-3px);
+  transform: translateY(3px);
   border-color: rgba(255,255,255,.22);
-  box-shadow: 0 26px 60px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.10);
+  box-shadow: 0 26px 60px rgba(0,0,0,.3), inset 0 10px 0 rgba(255,255,255,.10);
 }
 
 /* 4) Keep images crisp inside cards (blog/projeto) */
@@ -1344,7 +1344,7 @@ body.page-col #footer .footer-container{
 /* ===== Forçar fundo muito escuro no portfólio ===== */
 #portfolio .chart-card,
 #portfolio .stat {
-  background: linear-gradient(180deg, rgba(0,0,0,.75), rgba(0,0,0,.85)) !important;
+  background: linear-gradient(180deg, rgba(0,0,0,.75), rgba(0,0,0,.45)) !important;
   border: 1px solid rgba(255,255,255,.12) !important;
   color: #f3f3f3 !important;
   box-shadow: 0 20px 50px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.08);

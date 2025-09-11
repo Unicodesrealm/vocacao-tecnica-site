@@ -49,7 +49,7 @@
 
       <!-- Desktop menu -->
       <ul>
-        <li><a href="#inicio">Início</a></li>
+         <li><a href="index.html#inicio">Início</a></li>
         <li><a href="index.html#sobre">Sobre</a></li>
         <li><a href="index.html#servicos">Serviços</a></li>
         <li><a href="index.html#portfolio">Portfólio</a></li>
@@ -146,7 +146,8 @@
       </form>
     </section>
   </main>
-  <!-- 🔽 Footer -->
+	
+<!-- 🔽 Footer -->
   <footer id="footer">
     <div class="footer-container">
       <!-- Logo + Descrição -->
@@ -159,12 +160,12 @@
       <div class="footer-col">
         <h4>Links Rápidos</h4>
         <ul>
-          <li><a href="#inicio">Início</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#portfolio">Portfólio</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contactos">Contactos</a></li>
+           <li><a href="index.html#inicio">Início</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#servicos">Serviços</a></li>
+          <li><a href="index.html#portfolio">Portfólio</a></li>
+          <li><a href="index.html#blog">Blog</a></li>
+          <li><a href="index.html#contactos">Contactos</a></li>
         </ul>
       </div>
 
@@ -173,8 +174,9 @@
         <h4>Institucional</h4>
         <ul>
           <li><a href="carreiras.html">Carreiras</a></li>
-          <li><a href="#Politica_de_Privacidade_VT.html">Política de Privacidade</a></li>
-          <li><a href="#">Termos de Uso</a></li>
+          <li><a href="politicas.html" id="open-privacy-footer">Política de Privacidade</a></li>
+          <li><a href="#termos" id="open-terms">Termos de Uso</a></li>
+          <li><a href="#politicas" id="open-privacy-link-desktop">Política de Privacidade</a><l>
         </ul>
       </div>
 
@@ -201,8 +203,261 @@
     </div>
   </footer>
 
+  <!-- 🔽 Overlay do menu (fica no fim do body) -->
   <div class="nav-overlay" hidden></div>
+
+  <!-- 🔽 Scripts -->
   <script src="script.js"></script>
+
+  <!-- 🔽 Clamp de texto dos cards (fallback real; não mexe no layout) -->
+  <script>
+    (function clampBlogExcerpts(){
+      const cards = document.querySelectorAll('#blog .blog-card .excerpt');
+      if (!cards.length) return;
+
+      const supportsLineClamp = CSS && CSS.supports && CSS.supports('-webkit-line-clamp','3');
+      if (supportsLineClamp) return; // CSS já resolve; nada a fazer
+
+      cards.forEach(p => {
+        const maxLines = parseInt(getComputedStyle(p).getPropertyValue('--lines')) || 3;
+        const lineHeight = parseFloat(getComputedStyle(p).lineHeight);
+        const maxHeight = lineHeight * maxLines;
+
+        const full = p.textContent.trim();
+        if (!full) return;
+
+        // se já couber, não corta
+        p.style.maxHeight = 'none';
+        p.textContent = full;
+        if (p.scrollHeight <= maxHeight + 1) return;
+
+        // busca binária para cortar sem quebrar layout
+        let lo = 0, hi = full.length, best = '';
+        while (lo <= hi) {
+          const mid = (lo + hi) >> 1;
+          p.textContent = full.slice(0, mid) + '…';
+          if (p.scrollHeight <= maxHeight + 1) {
+            best = p.textContent;
+            lo = mid + 1;
+          } else {
+            hi = mid - 1;
+          }
+        }
+        if (best) p.textContent = best;
+        p.dataset._clamped = '1';
+      });
+    })();
+  </script>
+</div>
+<!-- === Modal (Política de Privacidade) === -->
+<div id="privacy-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog privacy-dialog">
+    <button class="modal-close" id="close-privacy" aria-label="Fechar">✕</button>
+   <div class="modal-body privacy-text">
+  <h2>Política de Privacidade</h2>
+
+  <p>
+    A <strong>Vocação Técnica, Lda</strong> reconhece a importância da proteção dos dados pessoais dos seus clientes, 
+    colaboradores, parceiros e utilizadores do website. Por isso, adotamos medidas técnicas, administrativas e organizacionais 
+    destinadas a garantir a privacidade, a segurança e a confidencialidade das informações recolhidas. 
+    Esta Política de Privacidade descreve em detalhe os tipos de dados tratados, as finalidades do seu uso e os direitos 
+    que assistem ao titular das informações.
+  </p>
+
+  <h3>1. Dados Recolhidos</h3>
+  <p>
+    A recolha de dados pode ocorrer de forma direta, através de formulários, candidaturas, pedidos de contacto e inscrições 
+    em newsletters, ou de forma indireta, através de cookies e ferramentas de monitorização.  
+    Estes dados podem incluir, entre outros: nome completo, endereço de email, contacto telefónico, instituição a que pertence, 
+    cargo profissional, morada, bem como dados técnicos como endereço IP, geolocalização aproximada, tipo de dispositivo, 
+    navegador utilizado e registos de interação com o website.
+  </p>
+
+  <h3>2. Finalidade da Recolha</h3>
+  <p>
+    Os dados recolhidos destinam-se a permitir uma comunicação eficaz entre a <strong>Vocação Técnica, Lda</strong> e o utilizador, 
+    nomeadamente para: responder a pedidos de informação, elaborar propostas comerciais, processar candidaturas de emprego, 
+    enviar conteúdos institucionais e publicitários quando autorizado, melhorar a qualidade do website e dos serviços prestados, 
+    bem como cumprir obrigações legais e regulamentares aplicáveis.  
+    Também poderemos utilizar os dados para análises estatísticas internas, sempre com salvaguarda da identidade do utilizador.
+  </p>
+
+  <h3>3. Partilha de Dados</h3>
+  <p>
+    A <strong>Vocação Técnica, Lda</strong> não comercializa dados pessoais.  
+    A partilha só ocorre em situações específicas, como:  
+    (i) cumprimento de requisitos legais e ordens de autoridades competentes;  
+    (ii) contratação de serviços externos de apoio técnico ou de armazenamento, sempre sob cláusulas contratuais de confidencialidade;  
+    (iii) parcerias institucionais em projetos, quando indispensável para a execução contratual.  
+    Em todas as situações, garantimos que os terceiros cumprem com padrões de proteção equivalentes aos que adotamos.
+  </p>
+
+  <h3>4. Segurança</h3>
+  <p>
+    Adotamos medidas de segurança técnicas (como encriptação, firewalls e monitorização de acessos) e organizacionais 
+    (como restrição de acessos, auditorias e protocolos internos) para proteger os dados contra perda, roubo, alteração, 
+    utilização indevida ou acesso não autorizado. Apesar destes esforços, lembramos que nenhum sistema digital é 
+    totalmente imune a riscos, pelo que incentivamos os utilizadores a adotar boas práticas de segurança no seu próprio dispositivo.
+  </p>
+
+  <h3>5. Cookies e Tecnologias Semelhantes</h3>
+  <p>
+    Utilizamos cookies e ferramentas analíticas para melhorar a experiência de navegação, personalizar conteúdos, 
+    recordar preferências e obter dados estatísticos sobre o uso do website.  
+    O utilizador pode gerir ou desativar cookies diretamente nas definições do seu navegador, embora isso possa limitar 
+    determinadas funcionalidades.
+  </p>
+
+  <h3>6. Direitos do Titular</h3>
+  <p>
+    O titular dos dados tem direito a solicitar, a qualquer momento:  
+    - Acesso aos seus dados pessoais;  
+    - Retificação ou atualização de informações inexatas;  
+    - Eliminação dos dados, quando aplicável;  
+    - Limitação ou oposição ao tratamento;  
+    - Portabilidade dos dados para outro responsável, quando tecnicamente viável.  
+    O exercício destes direitos poderá ser solicitado através do email <a href="mailto:geral@vt.co.mz">geral@vt.co.mz</a>.  
+    A <strong>Vocação Técnica, Lda</strong> compromete-se a responder a todos os pedidos num prazo razoável, 
+    respeitando os prazos legais aplicáveis.
+  </p>
+
+  <h3>7. Conservação dos Dados</h3>
+  <p>
+    Os dados são conservados apenas pelo período estritamente necessário para cumprir as finalidades para as quais foram recolhidos, 
+    salvo quando a lei exigir períodos mais longos de conservação. Após o fim desse prazo, os dados são eliminados de forma segura 
+    ou anonimizados para utilização em análises estatísticas.
+  </p>
+
+  <h3>8. Alterações à Política</h3>
+  <p>
+    Esta Política de Privacidade poderá ser revista sempre que necessário, para refletir mudanças legislativas, evoluções 
+    tecnológicas ou melhorias institucionais. As atualizações serão publicadas no website com indicação da data da última revisão. 
+    Recomendamos a consulta periódica desta página para estar informado sobre como protegemos os seus dados.
+  </p>
+
+  <h3>9. Contactos</h3>
+  <p>
+    Caso tenha dúvidas, comentários ou pretenda exercer os seus direitos, pode entrar em contacto connosco:  
+    <strong>Email:</strong> <a href="mailto:geral@vt.co.mz">geral@vt.co.mz</a>  
+    <strong>Telefone:</strong> (+258) 843 128 808  
+    <strong>Sede:</strong> Av. Eduardo Mondlane, nº 1234, Nampula, Moçambique.
+  </p>
+</div>
+</div>
+<!-- === Modal (Termos de Uso) === -->
+<div id="terms-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog terms-dialog">
+    <button class="modal-close" id="close-terms" aria-label="Fechar">✕</button>
+    <div class="modal-body terms-text">
+      <h2>Termos de Uso</h2>
+      <p>Bem-vindo ao site da <strong>Vocação Técnica, Lda</strong>. Estes Termos de Uso regulam o acesso e utilização deste website. Ao navegar, o utilizador concorda com as condições aqui descritas.</p>
+
+      <h3>1. Utilização do Website</h3>
+      <p>O conteúdo disponibilizado tem caráter informativo e institucional. É proibida a utilização do website para fins ilícitos ou que possam prejudicar a imagem da empresa.</p>
+
+      <h3>2. Direitos de Propriedade</h3>
+      <p>Todos os textos, imagens, logótipos e demais conteúdos são propriedade da <strong>Vocação Técnica, Lda</strong>, não podendo ser reproduzidos sem autorização prévia.</p>
+
+      <h3>3. Limitação de Responsabilidade</h3>
+      <p>A empresa não se responsabiliza por eventuais danos resultantes do uso inadequado do website ou da indisponibilidade temporária do serviço.</p>
+
+      <h3>4. Alterações</h3>
+      <p>Reservamo-nos o direito de alterar ou atualizar estes Termos de Uso a qualquer momento, sendo as mudanças publicadas nesta página.</p>
+
+      <h3>5. Contactos</h3>
+      <p>Para dúvidas ou informações adicionais, contacte-nos através do email <a href="mailto:geral@vt.co.mz">geral@vt.co.mz</a> ou pelo telefone (+258) 843 128 808.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Overlay único -->
+<div class="nav-overlay" hidden></div>
+
+<!-- Scripts -->
+<script src="script.js"></script>
+<script>
+  // === Modal Política de Privacidade ===
+  (function privacyModalSetup(){
+    const modal = document.getElementById("privacy-modal");
+    const closeBtn = document.getElementById("close-privacy");
+    const openers = document.querySelectorAll("#open-privacy-link, #open-privacy-link-desktop, #open-privacy-footer");
+
+    if (!modal) return;
+
+    function openModal(e){
+      e.preventDefault();
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden","false");
+      document.body.classList.add("no-scroll");
+    }
+    function closeModal(){
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden","true");
+      document.body.classList.remove("no-scroll");
+    }
+
+    openers.forEach(link => link.addEventListener("click", openModal));
+    closeBtn?.addEventListener("click", closeModal);
+    modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape" && modal.classList.contains("open")) closeModal(); });
+  })();
+
+<!-- Scripts -->
+<script src="script.js"></script>
+<script>
+  // === Modal Política de Privacidade ===
+  (function privacyModalSetup(){
+    const modal = document.getElementById("privacy-modal");
+    const closeBtn = document.getElementById("close-privacy");
+    const openers = document.querySelectorAll("#open-privacy-link, #open-privacy-link-desktop, #open-privacy-footer");
+
+    if (!modal) return;
+
+    function openModal(e){
+      e.preventDefault();
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden","false");
+      document.body.classList.add("no-scroll");
+    }
+    function closeModal(){
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden","true");
+      document.body.classList.remove("no-scroll");
+    }
+
+    openers.forEach(link => link.addEventListener("click", openModal));
+    closeBtn?.addEventListener("click", closeModal);
+    modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape" && modal.classList.contains("open")) closeModal(); });
+  })();
+
+  // === Modal Termos de Uso ===
+  (function termsModalSetup(){
+    const modal = document.getElementById("terms-modal");
+    const closeBtn = document.getElementById("close-terms");
+    const openers = document.querySelectorAll("#open-terms, #open-terms-desktop");
+
+    if (!modal) return;
+
+    function openModal(e){
+      e.preventDefault();
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden","false");
+      document.body.classList.add("no-scroll");
+    }
+    function closeModal(){
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden","true");
+      document.body.classList.remove("no-scroll");
+    }
+
+    openers.forEach(link => link.addEventListener("click", openModal));
+    closeBtn?.addEventListener("click", closeModal);
+    modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape" && modal.classList.contains("open")) closeModal(); });
+  })();
+</script>
+
 </body>
 </html>
 <script src="script.js"></script>
